@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cysfgynjickur"]
+
+[ext_resource type="PackedScene" uid="uid://kw62opumwkfr" path="res://scenes/terraria.tscn" id="1_e358s"]
+[ext_resource type="Script" path="res://scripts/Lighting.gd" id="3_gwcpe"]
+
+[node name="test" type="Node2D"]
+
+[node name="Lighting" type="Node2D" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Lighting"]
+texture_repeat = 2
+color = Color(0.454902, 0.454902, 0.454902, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lighting"]
+position = Vector2(0, -100)
+color = Color(0.819608, 0.631373, 0.498039, 1)
+shadow_enabled = true
+height = 1.0
+max_distance = 400.0
+script = ExtResource("3_gwcpe")
+
+[node name="Terraria" parent="." instance=ExtResource("1_e358s")]
